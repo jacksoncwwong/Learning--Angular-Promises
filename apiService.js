@@ -34,3 +34,10 @@ ApiService.prototype.login = function(username, password) {
   add a createAccount() function that sends POST to
   https://mock-login-server.herokuapp.com/api/createAccount
 */
+
+ApiService.prototype.createAccount = function createAccount(username, password) {
+  return this.$http.post(CREATE_ACCOUNT_URL, {username: username, password: password})
+  .then(function(response) {
+    console.log(response);
+  });
+};
