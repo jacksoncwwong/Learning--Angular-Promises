@@ -1,16 +1,27 @@
 <div class="modal-header">
-	<h3 class="modal-title">Create Account</h3>
+    <h3 class="modal-title">Create Account</h3>
 </div>
 <div class="modal-body">
-	<form action="">
-		<input type="text" name="username" ng-model="ctrl.api.username">
-		<input type="password" name="password" ng-model="ctrl.api.password">
-		<input type="text" name="name" ng-model="ctrl.api.name">
-		<input type="text" name="age" ng-model="ctrl.api.age">
-		<input type="email" name="email" ng-model="ctrl.api.email">
-	</form>
+    <form action="">
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" ng-model="ctrl.api.username" placeholder="username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" ng-model="ctrl.api.password" placeholder="password">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="name" ng-model="ctrl.api.name" placeholder="name">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="age" ng-model="ctrl.api.age" placeholder="age">
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" ng-model="ctrl.api.email" placeholder="email">
+        </div>
+    </form>
 </div>
 <div class="modal-footer">
-	<button class="btn btn-primary" ng-click="ctrl.confirm()">Create Account</button>
-	<button class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
+    <button class="btn btn-primary" ng-click="ctrl.confirm()">Create Account</button>
+    <button class="btn btn-warning" ng-click="ctrl.cancel()">Cancel</button>
 </div>
+

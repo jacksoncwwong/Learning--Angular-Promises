@@ -38,7 +38,7 @@ ApiService.prototype.getProfile = function getProfile() {
 };
 
 ApiService.prototype.createAccount = function createAccount() {
-  return this.$http.post(CREATE_ACCOUNT_URL, {username: this.username, password: this.password})
+  return this.$http.post(CREATE_ACCOUNT_URL, {username: this.username, password: this.password, name: this.name, age: this.age, email: this.email})
   .then(function(response) {
     alert("Account Created");
     console.log("apiService is loaded");
