@@ -3,6 +3,9 @@ function ApiService($http) {
   this.profile = [];
   this.username = "";
   this.password = "";
+  this.name = "";
+  this.age = "";
+  this.email = "";
 }
 
 angular.module('userApp').service('api', ApiService);
