@@ -24,11 +24,6 @@ ApiService.prototype.login = function(username, password) {
   });
 };
 
-/*TODO #5: 
-  add a logout() function that sends a POST to
-  https://mock-login-server.herokuapp.com/api/logout
-*/
-
 ApiService.prototype.logout = function logout() {
   return this.$http.post(LOGOUT_URL);
 };
