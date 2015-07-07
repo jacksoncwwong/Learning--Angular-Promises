@@ -1,13 +1,14 @@
 <div class="profile-tile">
   <!--TODO #4: Show the user's profile picture-->
-  <img class="avatar">
+  <img class="avatar" ng-src="{{ctrl.profile.profilePic}}">
   <div class="text-center">
     <div>
       <h3>
         <!--TODO #4: show the user's name-->
+        {{ctrl.profile.name}}
       </h3>
     </div>
-    <div class=text-center>
+    <div class="text-center">
       <!--TODO #4: show the user's e-mail-->
     </div>
     <div>
@@ -26,5 +27,5 @@
 
 <div class="text-center">
   <!--TODO #4: Log the user out when they click this button-->
-  <button class="btn btn-primary">Log Out</button>
+  <button class="btn btn-primary" ng-click="ctrl.logout()">Log Out</button>
 </div>

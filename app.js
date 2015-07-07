@@ -9,15 +9,20 @@ app.config(function($routeProvider, $httpProvider) {
     .when('/profile', {
       templateUrl: 'profile.html',
       controller: 'ProfileCtrl as ctrl',
-      /*TODO #3: Add a "resolve" that loads the user
-      profile before the profile page loads. If there
-      is an error loading the profile then redirect
-      the user to the login page.*/
+      resolve: {
+        app:function(api, $location) {
+          console.log("I'm resolved!!!");
+          return api.getProfile()
+          .catch(function(response){
+            console.log(response);
+            $location.path('/login');
+          });
+        }
+      }
     })
     .otherwise({
       redirectTo: '/login'
     });
-
 
   $httpProvider.interceptors.push(function() {
     return {

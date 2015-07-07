@@ -1,5 +1,6 @@
 function ApiService($http) {
   this.$http = $http;
+  this.profile = [];
 }
 
 angular.module('userApp').service('api', ApiService);
@@ -13,7 +14,13 @@ var CREATE_ACCOUNT_URL = BASE_URL + 'createAccount';
 ApiService.prototype.login = function(username, password) {
   return this.$http.post(LOGIN_URL, {username: username, password: password})
   .then(function(response) {
+    console.log(response);
+    alert("login successful");
     localStorage.authToken = response.data.authToken;
+  })
+  .catch(function(response) {
+    console.log(response);
+    alert("login unsuccessful");
   });
 };
 
@@ -22,22 +29,23 @@ ApiService.prototype.login = function(username, password) {
   https://mock-login-server.herokuapp.com/api/logout
 */
 
-/*TODO #3: 
-  add a getProfile() function that sends a GET to
-  https://mock-login-server.herokuapp.com/api/user
-  
-  This function should a return a promise that 
-  resolves the user data
-*/
+ApiService.prototype.logout = function logout() {
+  return this.$http.post(LOGOUT_URL);
+};
 
-/*TODO #1:
-  add a createAccount() function that sends POST to
-  https://mock-login-server.herokuapp.com/api/createAccount
-*/
+ApiService.prototype.getProfile = function getProfile() {
+  return this.$http.get(PROFILE_URL);
+};
 
 ApiService.prototype.createAccount = function createAccount(username, password) {
   return this.$http.post(CREATE_ACCOUNT_URL, {username: username, password: password})
   .then(function(response) {
+    alert("Account Created");
+    console.log("apiService is loaded");
     console.log(response);
+  })
+  .catch(function(response) {
+    console.log(response);
+    alert("Status Code: " + response.status + "\nStatus Text: " + response.statusText);
   });
 };
