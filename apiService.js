@@ -1,6 +1,8 @@
 function ApiService($http) {
   this.$http = $http;
   this.profile = [];
+  this.username = "";
+  this.password = "";
 }
 
 angular.module('userApp').service('api', ApiService);
@@ -32,8 +34,8 @@ ApiService.prototype.getProfile = function getProfile() {
   return this.$http.get(PROFILE_URL);
 };
 
-ApiService.prototype.createAccount = function createAccount(username, password) {
-  return this.$http.post(CREATE_ACCOUNT_URL, {username: username, password: password})
+ApiService.prototype.createAccount = function createAccount() {
+  return this.$http.post(CREATE_ACCOUNT_URL, {username: this.username, password: this.password})
   .then(function(response) {
     alert("Account Created");
     console.log("apiService is loaded");

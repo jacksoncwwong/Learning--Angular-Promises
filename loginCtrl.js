@@ -1,17 +1,17 @@
 function LoginCtrl(api, $location, $modal) {
   this.api = api;
-  this.username = "";
-  this.password = "";
+  // this.username = "";
+  // this.password = "";
   this.location = $location;
   this.modal = $modal;
 }
 
 angular.module('userApp').controller('LoginCtrl', LoginCtrl);
 
-LoginCtrl.prototype.createAccount = function createAccount() {
-	console.log("LoginCtrl.createAccount is loaded");
-	this.api.createAccount(this.username, this.password);
-};
+// LoginCtrl.prototype.createAccount = function createAccount() {
+// 	console.log("LoginCtrl.createAccount is loaded");
+// 	this.api.createAccount(this.username, this.password);
+// };
 
 LoginCtrl.prototype.login = function login() {
 	var self = this;
