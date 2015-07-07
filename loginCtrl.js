@@ -23,7 +23,6 @@ LoginCtrl.prototype.login = function login() {
 };
 
 LoginCtrl.prototype.openModal = function openModal() {
-	var self = this;
 	console.log("LoginCtrl.openModal is loaded");
 	this.modal.open({
 		templateUrl: 'modal.html',
