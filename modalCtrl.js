@@ -11,6 +11,9 @@ ModalCtrl.prototype.confirm = function confirm() {
 		.then(function(response){
 			console.log(response);
 			self.modalInstance.close();
+		})
+		.catch(function(response){
+			console.log(reponse);
 		});
 };
 

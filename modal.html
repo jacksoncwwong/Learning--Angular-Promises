@@ -3,7 +3,9 @@
 </div>
 <div class="modal-body">
     <form action="">
-    	<div ng-messages="form.ng-dirty && form.ng-submitted">
+    	<div ng-messages="form.username.$touched || form.username.$invalid">
+    		<div ng-message="required">Required!!!</div>
+    	</div>
         <div class="form-group">
             <input type="text" class="form-control" name="username" ng-model="ctrl.api.username" placeholder="username" required>
         </div>
