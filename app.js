@@ -1,4 +1,4 @@
-var app = angular.module('userApp', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('userApp', ['ngRoute', 'ui.bootstrap', 'ngMessages']);
 
 app.config(function($routeProvider, $httpProvider) {
   $routeProvider

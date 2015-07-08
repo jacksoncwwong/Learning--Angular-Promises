@@ -3,11 +3,12 @@
 </div>
 <div class="modal-body">
     <form action="">
+    	<div ng-messages="form.ng-dirty && form.ng-submitted">
         <div class="form-group">
-            <input type="text" class="form-control" name="username" ng-model="ctrl.api.username" placeholder="username">
+            <input type="text" class="form-control" name="username" ng-model="ctrl.api.username" placeholder="username" required>
         </div>
         <div class="form-group">
-            <input type="password" class="form-control" name="password" ng-model="ctrl.api.password" placeholder="password">
+            <input type="password" class="form-control" name="password" ng-model="ctrl.api.password" placeholder="password" required>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="name" ng-model="ctrl.api.name" placeholder="name">
@@ -16,7 +17,7 @@
             <input type="text" class="form-control" name="age" ng-model="ctrl.api.age" placeholder="age">
         </div>
         <div class="form-group">
-            <input type="email" class="form-control" name="email" ng-model="ctrl.api.email" placeholder="email">
+            <input type="email" class="form-control" name="email" ng-model="ctrl.api.email" placeholder="email" required>
         </div>
     </form>
 </div>
